@@ -1,0 +1,48 @@
+{% from "sb-admin/macros/morris/areachart.html" import area_chart %}
+{% from "sb-admin/macros/morris/barchart.html" import bar_chart %}
+{% from "sb-admin/macros/morris/linechart.html" import line_chart %}
+{% from "sb-admin/macros/morris/donutchart.html" import donut_chart %}
+
+<!-- extend base layout -->
+{% extends "sb-admin/master.html" %}
+
+{% block body %}
+<div class="row">
+	<div class="col-lg-6">
+		{{area_chart("Area Chart Example")}}
+	</div>
+	<div class="col-lg-6">
+		{{bar_chart("Bar Chart Example")}}
+	</div>
+	<div class="col-lg-6">
+		{{line_chart("Line Chart Example")}}
+	</div>
+	<div class="col-lg-6">
+		{{donut_chart("Donut Chart Example")}}
+	</div>
+	<div class="col-lg-12">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				Morris.js Usage
+			</div>
+			<!-- /.panel-heading -->
+			<div class="panel-body">
+				<p>Morris.js is a jQuery based charting plugin created by Olly Smith. In SB Admin, we are using the most recent version of Morris.js which includes the resize function, which makes the charts fully responsive. The documentation for Morris.js is available on their website, <a target="_blank" href="http://morrisjs.github.io/morris.js/">http://morrisjs.github.io/morris.js/</a>.</p>
+				<a target="_blank" class="btn btn-default btn-lg btn-block" href="http://morrisjs.github.io/morris.js/">View Morris.js Documentation</a>
+			</div>
+			<!-- /.panel-body -->
+		</div>
+		<!-- /.panel -->
+	</div>
+	<!-- /.col-lg-6 -->
+</div>
+{% endblock %}
+
+{% block tail %}
+
+    <!-- Morris Charts JavaScript -->
+    <script src="/bower_components/raphael/raphael-min.js"></script>
+    <script src="/bower_components/morrisjs/morris.min.js"></script>
+    <script src="/js/morris-data.js"></script>
+
+{% endblock %}

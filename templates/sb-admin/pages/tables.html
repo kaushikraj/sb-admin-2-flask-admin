@@ -1,0 +1,57 @@
+{% from "sb-admin/macros/tables/advtable.html" import adv_table %}
+{% from "sb-admin/macros/tables/table.html" import table %}
+
+{% extends "sb-admin/master.html" %}
+
+{% block body %}
+<div class="row">
+	<div class="col-lg-12">
+		{{adv_table("DataTables Advanced Tables", admin_view.tables.advtables.columns, admin_view.tables.advtables.rows)}}
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-lg-6">
+		{{table("Kitchen Sink", admin_view.tables.table.columns, admin_view.tables.table.rows, "sink")}}
+	</div>
+	<div class="col-lg-6">
+		{{table("Basic Table", admin_view.tables.table.columns, admin_view.tables.table.rows, "basic")}}
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-lg-6">
+		{{table("Striped Rows", admin_view.tables.table.columns, admin_view.tables.table.rows, "striped")}}
+	</div>
+	<div class="col-lg-6">
+		{{table("Bordered Table", admin_view.tables.table.columns, admin_view.tables.table.rows, "bordered")}}
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-lg-6">
+		{{table("Hover Rows", admin_view.tables.table.columns, admin_view.tables.table.rows, "hover")}}
+	</div>
+	<div class="col-lg-6">
+		{{table("Context Classes", admin_view.tables.table.columns, admin_view.tables.table.rows, "simple", admin_view.tables.table.context)}}
+	</div>
+</div>
+
+{% endblock %}
+
+{% block tail %}
+
+    <!-- DataTables JavaScript -->
+    <script src="../bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script src="../bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js"></script>
+
+    <!-- Page-Level Demo Scripts - Tables - Use for reference -->
+    <script>
+    $(document).ready(function() {
+        $('#dataTables-example').DataTable({
+                responsive: true
+        });
+    });
+    </script>
+
+{% endblock %}

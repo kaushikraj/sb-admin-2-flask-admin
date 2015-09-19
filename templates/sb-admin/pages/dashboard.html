@@ -1,0 +1,52 @@
+<!-- extend base layout -->
+{% extends "sb-admin/master.html" %}
+
+{% from "sb-admin/macros/dashboard/counticon.html" import count_icon %}
+{% from "sb-admin/macros/dashboard/areachart.html" import area_chart %}
+{% from "sb-admin/macros/dashboard/barchart.html" import bar_chart %}
+{% from "sb-admin/macros/dashboard/timeline.html" import timeline %}
+{% from "sb-admin/macros/dashboard/notification.html" import notification %}
+{% from "sb-admin/macros/dashboard/donut.html" import donut %}
+{% from "sb-admin/macros/dashboard/chat.html" import chat %}
+
+{% block body %}
+<div class="row">
+	<div class="col-lg-3 col-md-6">
+		{{count_icon(26, "New Comments!", "comments", "primary", "#")}}
+	</div>
+	<div class="col-lg-3 col-md-6">
+		{{count_icon(12, "New Tasks!", "tasks", "green", "#")}}
+	</div>
+	<div class="col-lg-3 col-md-6">
+		{{count_icon(124, "New Orders!", "shopping-cart", "yellow", "#")}}
+	</div>
+	<div class="col-lg-3 col-md-6">
+		{{count_icon(13, "Support Tickets!", "support", "red", "#")}}
+	</div>
+</div>
+
+<div class="row">
+    <div class="col-lg-8">
+        {{area_chart("Area Chart Example")}}
+        {{bar_chart("Bar Chart Example")}}
+        {{timeline("Responsive Timeline")}}
+    </div>
+    <div class="col-lg-4">
+        {{notification("Notifications Panel")}}
+        {{donut("Donut Chart Example")}}
+        {{chat("Chat")}}
+    </div>
+</div>
+	
+{% endblock %}
+
+{% block tail %}
+
+    <!-- Timeline CSS -->
+    <link href="/dist/css/timeline.css" rel="stylesheet">
+
+    <!-- Morris Charts JavaScript -->
+    <script src="/bower_components/raphael/raphael-min.js"></script>
+    <script src="/bower_components/morrisjs/morris.min.js"></script>
+    <script src="/js/morris-data.js"></script>
+{% endblock %}

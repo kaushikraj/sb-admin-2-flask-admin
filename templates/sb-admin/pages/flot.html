@@ -1,0 +1,50 @@
+{% from "sb-admin/macros/flot/linechart.html" import flot_line_chart %}
+{% from "sb-admin/macros/flot/piechart.html" import flot_pie_chart %}
+{% from "sb-admin/macros/flot/multiaxeschart.html" import flot_multiaxes_chart %}
+{% from "sb-admin/macros/flot/movinglinechart.html" import flot_movingline_chart %}
+{% from "sb-admin/macros/flot/barchart.html" import flot_bar_chart %}
+
+<!-- extend base layout -->
+{% extends "sb-admin/master.html" %}
+
+{% block body %}
+<div class="row">
+    <div class="col-lg-12">
+        {{flot_line_chart(header="Line Chart Example")}}
+    </div>
+    <div class="col-lg-6">
+        {{flot_pie_chart(header="Pie Chart Example")}}
+    </div>
+    <div class="col-lg-6">
+        {{flot_multiaxes_chart(header="Multiple Axes Line Chart Example")}}
+    </div>
+    <div class="col-lg-6">
+            {{flot_movingline_chart(header="Moving Line Chart Example")}}
+    </div>
+    <div class="col-lg-6">
+        {{flot_bar_chart(header="Bar Chart Example")}}
+    </div>
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Flot Charts Usage
+            </div>
+            <div class="panel-body">
+                <p>Flot is a pure JavaScript plotting library for jQuery, with a focus on simple usage, attractive looks, and interactive features. In SB Admin, we are using the most recent version of Flot along with a few plugins to enhance the user experience. The Flot plugins being used are the tooltip plugin for hoverable tooltips, and the resize plugin for fully responsive charts. The documentation for Flot Charts is available on their website, <a target="_blank" href="http://www.flotcharts.org/">http://www.flotcharts.org/</a>.</p>
+                <a target="_blank" class="btn btn-default btn-lg btn-block" href="http://www.flotcharts.org/">View Flot Charts Documentation</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block tail %}
+    <!-- Flot Charts JavaScript -->
+    <script src="/bower_components/flot/excanvas.min.js"></script>
+    <script src="/bower_components/flot/jquery.flot.js"></script>
+    <script src="/bower_components/flot/jquery.flot.pie.js"></script>
+    <script src="/bower_components/flot/jquery.flot.resize.js"></script>
+    <script src="/bower_components/flot/jquery.flot.time.js"></script>
+    <script src="/bower_components/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
+    <script src="/js/flot-data.js"></script>
+{% endblock %}
