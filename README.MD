@@ -1,19 +1,4 @@
-# SB Admin 2 - Flask-admin template
-
-**SB Admin 2 - Flask-admin template** is a Python based template (using flask-admin) for [SB Admin 2](http://startbootstrap.com/template-overviews/sb-admin-2/).
-
-## Installation
-
-```
-$virtualenv env
-$source env/bin/activate
-$pip intall -r requirements.txt
-```
-
-## Executing the sample
-
-* Execute - ```python run.py```
-* Load browser at ```http://localhost:5000/```
+For details see [http://kaushikraj.com/2015/09/18/sb-admin-2-admin-flask/](http://kaushikraj.com/2015/09/18/sb-admin-2-admin-flask/)
 
 ## Copyright and License
 Copyright 2015 Kaushik Raj. Code released under MIT license.
