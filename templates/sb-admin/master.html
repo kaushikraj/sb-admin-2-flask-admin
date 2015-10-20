@@ -4,7 +4,7 @@
 {% block page_body %}
 
 <div id="wrapper">
-	<!-- Navigation -->
+
     {{nav_bar(admin_view.header)}}	
 
 	<div id="page-wrapper">
@@ -14,9 +14,7 @@
             </div>
             <!-- /.col-lg-12 -->
         </div>
-        <div class="row">
 	       {% block body %}{% endblock %}
-        </div>
 	</div>
 </div>
 {% endblock %}

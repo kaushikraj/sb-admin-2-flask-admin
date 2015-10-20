@@ -55,7 +55,7 @@ class AdminIndexView(admin.AdminIndexView):
             
         self._stubs()    
         self.header = "Flot Charts"
-        return render_template('sb-admin/pages/flot.html', admin_view=self)        
+        return render_template('sb-admin/pages/flot.html', admin_view=self)
 
     @expose('/morris')
     def morris(self):        
