@@ -3,3 +3,4 @@ env
 *.swp
 .DS_Store
 .vscode
+bower_components/
