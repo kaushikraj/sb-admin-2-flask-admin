@@ -1,0 +1,15 @@
+---
+# https://docs.docker.com/compose/compose-file/compose-file-v2/
+version: '2'
+
+services:
+
+  # Provisioning Server (iPXE router / HTTP endpoints)
+  sb-admin-2:
+    build: .
+    image: sb-admin-2:latest
+    ports:
+      - "5000:5000"
+    volumes:
+      # Flask App
+      - ./:/app
